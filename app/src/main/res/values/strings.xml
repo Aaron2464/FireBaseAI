@@ -4,4 +4,10 @@
     <string name="name">Name</string>
     <string name="password">Password</string>
     <string name="phone">Phone</string>
+    <string-array name="TAG">
+        <item>Garbage</item>
+        <item>Life</item>
+        <item>Marvel</item>
+        <item>Beauty</item>
+    </string-array>
 </resources>

@@ -52,9 +52,10 @@ public class Write_Fragment extends Fragment{
             @Override
             public void onClick(View v) {
 
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日HH:mm:ss");
-                Date curDate = new Date(System.currentTimeMillis()) ; // 獲取當前時間
-                time = formatter.format(curDate);
+//                SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日HH:mm:ss");
+//                Date curDate = new Date(System.currentTimeMillis()) ; // 獲取當前時間
+//                time = formatter.format(curDate);
+                time = String.valueOf(System.currentTimeMillis());
                 title = edit_title.getText().toString();
                 content = edit_content.getText().toString();
 
