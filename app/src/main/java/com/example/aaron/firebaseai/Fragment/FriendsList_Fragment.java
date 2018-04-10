@@ -31,6 +31,8 @@ public class FriendsList_Fragment extends Fragment{
     EditText edit_email;
     Button btn_sned_request;
 
+    FirebaseDatabase db_friend_list;
+    DatabaseReference users_friend_list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +44,9 @@ public class FriendsList_Fragment extends Fragment{
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        db_friend_list = FirebaseDatabase.getInstance();
+        users_friend_list = db_friend_list.getReference("Friend Request");
 
         edit_email = view.findViewById(R.id.edit_email);
         btn_sned_request = view.findViewById(R.id.btn_send_request);
@@ -65,6 +70,8 @@ public class FriendsList_Fragment extends Fragment{
                                 Log.d(TAG,"Uid:" + FriendUid);
                                 // do something with the individual "issues"
                         }
+                        users_friend_list.child(CurrentUid).child(FriendUid).setValue("sent");
+                        users_friend_list.child(FriendUid).child(CurrentUid).setValue("received");
                     }
 
                     @Override
