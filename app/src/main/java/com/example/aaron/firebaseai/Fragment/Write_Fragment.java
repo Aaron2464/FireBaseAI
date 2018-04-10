@@ -1,11 +1,13 @@
 package com.example.aaron.firebaseai.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -26,6 +28,7 @@ public class Write_Fragment extends Fragment{
 
     DatabaseReference SendContent;
     String CurrentUid;
+    Context mContext;
 
     String title;
     String content;
@@ -48,6 +51,7 @@ public class Write_Fragment extends Fragment{
 
         CurrentUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         SendContent = FirebaseDatabase.getInstance().getReference();
+
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

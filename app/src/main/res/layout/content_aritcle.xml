@@ -86,8 +86,9 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
+
+        android:entries="@array/TAG"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_send"
         app:layout_constraintStart_toStartOf="parent"
