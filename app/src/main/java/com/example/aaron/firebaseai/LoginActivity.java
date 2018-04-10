@@ -2,16 +2,15 @@ package com.example.aaron.firebaseai;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.aaron.firebaseai.UserManager.User;
@@ -22,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     Button btn_sign_In, btn_register;
 
@@ -77,15 +76,15 @@ public class MainActivity extends AppCompatActivity {
                 dialog.dismiss();
 
                 if (TextUtils.isEmpty(edtEmail.getText().toString())) {
-                    Toast.makeText(MainActivity.this,  "Please enter email address", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,  "Please enter email address", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (TextUtils.isEmpty(edtPassword.getText().toString())) {
-                    Toast.makeText(MainActivity.this,  "Please enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,  "Please enter password", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (edtPassword.getText().toString().length() < 6) {
-                    Toast.makeText(MainActivity.this,  "Passwod is too short !!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,  "Passwod is too short !!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -93,14 +92,14 @@ public class MainActivity extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
-                                startActivity(new Intent(MainActivity.this, Article_Activity.class));
+                                startActivity(new Intent(LoginActivity.this, Article_Activity.class));
                                 finish();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(MainActivity.this,   "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,   "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
 //                                Snackbar.make(rootLayout, "Failed " + e.getMessage(), Snackbar.LENGTH_SHORT).show();
                             }
                         });
@@ -135,26 +134,26 @@ public class MainActivity extends AppCompatActivity {
                 dialog.dismiss();
 
                 if (TextUtils.isEmpty(edtEmail.getText().toString())) {
-                    Toast.makeText(MainActivity.this,  "Please enter email address", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,  "Please enter email address", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (TextUtils.isEmpty(edtPassword.getText().toString())) {
-                    Toast.makeText(MainActivity.this,  "Please enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,  "Please enter password", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (edtPassword.getText().toString().length() < 6) {
-                    Toast.makeText(MainActivity.this,  "Passwod is too short !!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,  "Passwod is too short !!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(edtName.getText().toString())) {
-                    Toast.makeText(MainActivity.this,  "Please enter your name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,  "Please enter your name", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(edtPhone.getText().toString())) {
-                    Toast.makeText(MainActivity.this,  "Please enter phone number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,  "Please enter phone number", Toast.LENGTH_SHORT).show();
 //                    Snackbar.make(rootLayout, "Please enter phone number", Snackbar.LENGTH_SHORT).show();
                     return;
                 }
@@ -181,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                                         .addOnFailureListener(new OnFailureListener(){
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(MainActivity.this,"Failed "+ e.getMessage(),Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(LoginActivity.this,"Failed "+ e.getMessage(),Toast.LENGTH_SHORT).show();
 //                                                Snackbar.make(rootLayout,"Failed "+ e.getMessage(),Snackbar.LENGTH_SHORT).show();
                                             }
                                         });
@@ -191,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(MainActivity.this,"Failed "+ e.getMessage(),Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,"Failed "+ e.getMessage(),Toast.LENGTH_SHORT).show();
 //                                Snackbar.make(rootLayout,"Failed "+ e.getMessage(),Snackbar.LENGTH_SHORT).show();
                             }
                         });
