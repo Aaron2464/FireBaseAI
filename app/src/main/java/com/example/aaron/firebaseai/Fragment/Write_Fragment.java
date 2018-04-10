@@ -61,7 +61,7 @@ public class Write_Fragment extends Fragment{
 
         CurrentUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         SendContent = FirebaseDatabase.getInstance().getReference();
-        
+
         mTAG.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
