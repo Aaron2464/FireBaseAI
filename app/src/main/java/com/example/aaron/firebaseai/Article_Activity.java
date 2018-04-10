@@ -22,6 +22,21 @@ public class Article_Activity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_article);
+
+        mTransaction = getSupportFragmentManager().beginTransaction();
+
+        mTransaction.add(R.id.frameLayout,mMainFragment)
+                .add(R.id.frameLayout,mTagFragment)
+                .add(R.id.frameLayout,mWriteFragment)
+                .add(R.id.frameLayout,mFriendsListFragment);
+
+        mTransaction.hide(mWriteFragment)
+                .hide(mFriendsListFragment)
+                .hide(mTagFragment)
+                .show(mMainFragment)
+                .commit();
+
+        setBottomNavigation();
     }
 
     private void setBottomNavigation() {
