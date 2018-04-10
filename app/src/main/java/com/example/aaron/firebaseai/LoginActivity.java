@@ -177,7 +177,7 @@ public class LoginActivity extends AppCompatActivity {
                                 user.setPassword(edtPassword.getText().toString());
                                 user.setUid(FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
 
-                                users.child(edtEmail.getText().toString().replace(".",""))
+                                users.child(FirebaseAuth.getInstance().getCurrentUser().getUid().toString())
                                         .setValue(user)
                                         .addOnSuccessListener(new OnSuccessListener<Void>(){
                                             @Override

@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -19,11 +18,6 @@ import com.example.aaron.firebaseai.UserManager.Content;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import static com.example.aaron.firebaseai.LoginActivity.TAG;
 
@@ -54,7 +48,7 @@ public class Write_Fragment extends Fragment{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btn_send = (Button)view.findViewById(R.id.btn_send);
+        btn_send = (Button)view.findViewById(R.id.btn_send_content);
         edit_title = (EditText)view.findViewById(R.id.edit_title);
         edit_content = (EditText)view.findViewById(R.id.edit_content);
         mTAG = (Spinner)view.findViewById(R.id.spinner);
