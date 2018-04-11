@@ -80,7 +80,7 @@ public class Write_Fragment extends Fragment{
                 content = edit_content.getText().toString();
                 Content contentarticle = new Content(title,content,time,tag);
 
-                SendContent.child(CurrentUid).push().setValue(contentarticle);
+                SendContent.child(CurrentUid).push().setValue(contentarticle);      //push..autoId
                 SendContent.child(tag).push().setValue(contentarticle);
 
             }
